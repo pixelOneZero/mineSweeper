@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="mineSweeperJs">
+<head>
+    <meta charset="UTF-8" />
+    <title>mineSweeperJs</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<header> 
+    <h1>
+        mineSweeperJS
+    </h1>
+</header>
+
+<div data-container="gameBoard" ng-controller="gameBoard">
+	<div ng-repeat="item in items" class="square">
+	</div>
+</div>
+
+<script src="js/angular.min.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

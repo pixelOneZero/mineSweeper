@@ -1,0 +1,50 @@
+html {
+	font-family: sans-serif, helvetica;
+}
+body {
+    margin:0;
+    padding:0;
+}
+header {
+    background:#fff;
+    width:100%;
+}
+h1{
+    margin:.25em;
+    font-weight:normal;
+}
+div[data-container="gameBoard"] {
+    border:1px solid #999;
+    margin:0 20px;
+    padding:0;
+    height:220px;
+    width:220px;
+}
+div.square {
+    background-color:#ccc;
+    background-image:url('../images/mine.png');
+    height:22px;
+    width:21px;
+    padding:0;
+    display:inline-block;
+    border-right:1px solid #999;
+}
+ul {
+    margin:0;
+    padding:7em 1em;
+}
+li {
+    padding:1.25em 0;
+    margin:0;
+    list-style-type: none;
+    border-bottom:1px solid #aaa;
+}
+li:hover {
+    background:#ddd;
+}
+a {
+	color:#05f;
+}
+a:visited {
+    color:#999;
+}
