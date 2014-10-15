@@ -14,7 +14,7 @@
 </header>
 
 <div data-container="gameBoard" ng-controller="gameBoard">
-	<div ng-repeat="item in items" class="square">
+	<div ng-repeat="item in items" class="square" ng-click="setState(item.mine)">
 	</div>
 </div>
 
