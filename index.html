@@ -14,7 +14,8 @@
 </header>
 
 <div data-container="gameBoard" ng-controller="gameBoard">
-	<div ng-repeat="spot in gameSpots" ng-class="{closed: mine}" class="square" ng-click="setState()" ng-game-spot ng-model="setState">
+	<div ng-repeat="spot in gameSpots" ng-class="{open: open, mine: mine}" class="square closed" ng-click="setState()" ng-game-spots ng-model="setState">
+		<img src ng-if="spot.mine" ng-src="images/mine.png">
 	</div>
 </div>
 
@@ -22,5 +23,6 @@
 <script src="js/controllers.js"></script>
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/app.js"></script>
+
 </body>
 </html>
