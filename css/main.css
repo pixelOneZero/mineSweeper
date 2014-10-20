@@ -28,6 +28,7 @@ div[data-container="gameBoard"] {
     border-top:1px solid #999;
 }
 div.square {
+    overflow:hidden;
     background-color:#ccc;
     height:21px;
     width:21px;
@@ -42,11 +43,14 @@ div.square.closed {
     background-image:url('../images/mine.png');
     background-position: -20px 0;
 }
-div.open {
+div.square.closed img {
+    display:none;
+}
+div.square.open {
     background-image:none !important;
 }
-div.open.mine {
-    background-image:url('../images/mine.png');
+div.square.open img {
+    display:block;
 }
 ul {
     margin:0;
