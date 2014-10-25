@@ -1,0 +1,502 @@
+[
+    {
+        "position": "1-1",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-2",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-3",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-4",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-5",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-6",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-7",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-8",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-9",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-10",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-1",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-2",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-3",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-4",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-5",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-6",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-7",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-8",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-9",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-10",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-1",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-2",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-3",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-4",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-5",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-6",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-7",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-8",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-9",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-10",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-1",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-2",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-3",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-4",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-5",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-6",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-7",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-8",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-9",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-10",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-1",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-2",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-3",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-4",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-5",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-6",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-7",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-8",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-9",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-10",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-1",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-2",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-3",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-4",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-5",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-6",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-7",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-8",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-9",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-10",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-1",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-2",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-3",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-4",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-5",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-6",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-7",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-8",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-9",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-10",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-1",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-2",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-3",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-4",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-5",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-6",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-7",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-8",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-9",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-10",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-1",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-2",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-3",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-4",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-5",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-6",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-7",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-8",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-9",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "1-10",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-1",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-2",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-3",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-4",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "2-5",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "10-6",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "10-7",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "10-8",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "10-9",
+        "mine": false,
+        "open": false
+    },
+    {
+        "position": "10-10",
+        "mine": false,
+        "open": false
+    }
+]
