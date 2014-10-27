@@ -13,11 +13,11 @@
     </h1>
 </header>
 
-<div ng-controller="gameBoard">
+<div ng-controller="gameBoard" ng-model="spotData">
 	<div ng-show="gameOver">
 		Game over!
 	</div>
-	<div data-container="gameBoard" ng-model="gameSpots">
+	<div data-container="gameBoard">
 		<div ng-repeat="spot in gameSpots" ng-class="{open: open}" class="square closed" ng-click="setState()" data-position="{{spot.position}}" data-has-mine="{{spot.mine}}" my-game-spot>
 			<img src ng-if="spot.mine" ng-src="images/mine.png">
 		</div>
