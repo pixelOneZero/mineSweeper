@@ -50,10 +50,15 @@ uiModule.controller("gameBoard", function($scope) {
 					scope.currentX = parseInt(scope.currentSpot[0]);
 					scope.currentY = parseInt(scope.currentSpot[1]);
 
-					scope.adjacentSpots.push( scope.currentX + "-" + (scope.currentY - 1) );
-					scope.adjacentSpots.push( (scope.currentX + 1) + "-" + scope.currentY );
-					scope.adjacentSpots.push( scope.currentX + "-" + (scope.currentY + 1) );
-					scope.adjacentSpots.push( (scope.currentX - 1) + "-" + scope.currentY );
+					// Find adjacent eight spots, starting at top and moving clockwise:
+					scope.adjacentSpots.push( (scope.currentX-1) + "-" + scope.currentY );
+					scope.adjacentSpots.push( (scope.currentX-1) + "-" + (scope.currentY+1) );
+					scope.adjacentSpots.push( scope.currentX + "-" + (scope.currentY+1) );
+					scope.adjacentSpots.push( (scope.currentX+1) + "-" + (scope.currentY+1) );
+					scope.adjacentSpots.push( (scope.currentX+1) + "-" + scope.currentY );
+					scope.adjacentSpots.push( (scope.currentX+1) + "-" + (scope.currentY-1) );
+					scope.adjacentSpots.push( scope.currentX + "-" + (scope.currentY-1) );
+					scope.adjacentSpots.push( (scope.currentX-1) + "-" + (scope.currentY-1) );
 
 					for (var a = 0; a < scope.adjacentSpots.length; a++) {
 						for (var b = 0; b < scope.gameSpots.length; b++) {
@@ -62,8 +67,13 @@ uiModule.controller("gameBoard", function($scope) {
 								console.log(scope.gameSpots[b]["open"]);
 								scope.setSpot();
 							}
+							if (scope.gameSpots[b]["position"] == scope.adjacentSpots[a] && scope.gameSpots[b]["mine"] == true) {
+								scope.adjacentMineCount++;
+							}
 						}
 					}
+
+					elem.text(scope.adjacentMineCount);
 
 				}
 			}
