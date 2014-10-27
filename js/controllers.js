@@ -20,22 +20,30 @@ uiModule.controller("gameBoard", function($scope) {
 .directive("myGameSpot", function() {
 	return {
   	link: function(scope, elem, attrs) {
+
+  		 scope.adjacentMineCount = 0, scope.currentSpot = [], scope.currentX, scope.currentY;
+
   		scope.setState = function() {
 				scope.open = !scope.open;
 				
-				if (scope.checkForMine() === "true") {
+				if (scope.hasMine() === "true") {
 					scope.endGame();
-					console.log("game over!");
+				}
+				else {
+
 				}
 
 				scope.findAdjacentMines();
 			}
 			scope.findAdjacentMines = function() {
-				if (scope.isGameover == false) {
+				if (scope.isGameover() == false) {
 					console.log(attrs.position);
+					scope.currentX = scope.currentSpot[0];
+					scope.currentY = scope.currentSpot[1];
+					
 				}
 			}
-			scope.checkForMine = function() {
+			scope.hasMine = function() {
 				return attrs.hasMine;
 			}
   	}
