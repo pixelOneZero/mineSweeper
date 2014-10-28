@@ -21,7 +21,6 @@ uiModule.controller("gameBoard", function($scope) {
 	$scope.reInitBoard = function() {
 		//$scope.$apply(function() {
 			$scope.spotData = $scope.gameSpots;
-			console.log(JSON.stringify($scope.spotData));
 		//});
 	}
 
