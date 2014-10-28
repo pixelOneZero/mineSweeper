@@ -19,11 +19,16 @@ uiModule.controller("gameBoard", function($scope) {
 	}
 
 	$scope.reInitBoard = function() {
-		$scope.spotData = $scope.gameSpots;
+		//$scope.$apply(function() {
+			$scope.spotData = $scope.gameSpots;
+			console.log(JSON.stringify($scope.spotData));
+		//});
 	}
 
 	$scope.setSpot = function() {
-		$scope.reInitBoard();
+		$scope.$apply(function() {
+			$scope.reInitBoard();
+		});
 	}
 
 $scope.reInitBoard();
