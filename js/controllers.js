@@ -26,6 +26,8 @@ uiModule.controller("gameBoard", function($scope) {
 		$scope.reInitBoard();
 	}
 
+$scope.reInitBoard();
+
 })
 .directive("myGameSpot", function() {
 	return {
@@ -64,8 +66,7 @@ uiModule.controller("gameBoard", function($scope) {
 						for (var b = 0; b < scope.gameSpots.length; b++) {
 							if ( scope.gameSpots[b]["position"] == scope.adjacentSpots[a] && scope.gameSpots[b]["mine"] == false) {
 								scope.gameSpots[b]["open"] = true;
-								console.log(scope.gameSpots[b]["open"]);
-								scope.setSpot();
+								scope.reInitBoard();
 							}
 							if (scope.gameSpots[b]["position"] == scope.adjacentSpots[a] && scope.gameSpots[b]["mine"] == true) {
 								scope.adjacentMineCount++;
@@ -73,7 +74,9 @@ uiModule.controller("gameBoard", function($scope) {
 						}
 					}
 
-					elem.text(scope.adjacentMineCount);
+					if (scope.adjacentMineCount > 0) {
+						elem.text(scope.adjacentMineCount);
+					}
 
 				}
 			}
