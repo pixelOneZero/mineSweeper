@@ -43,6 +43,12 @@ $scope.reInitBoard();
 				scope.open = !scope.open;
 				
 				if (scope.hasMine() === "true") {
+					for (var b = 0; b < scope.gameSpots.length; b++) {
+						if (scope.gameSpots[b]["position"] == attrs.position) {
+							scope.gameSpots[b]["open"] = true;
+							scope.reInitBoard();
+						}
+					}
 					scope.endGame();
 				}
 				else {
@@ -65,6 +71,8 @@ $scope.reInitBoard();
 					scope.adjacentSpots.push( (scope.currentX+1) + "-" + (scope.currentY-1) );
 					scope.adjacentSpots.push( scope.currentX + "-" + (scope.currentY-1) );
 					scope.adjacentSpots.push( (scope.currentX-1) + "-" + (scope.currentY-1) );
+					//  Add current spot last
+					scope.adjacentSpots.push( (scope.currentX) + "-" + (scope.currentY) );
 
 					for (var a = 0; a < scope.adjacentSpots.length; a++) {
 						for (var b = 0; b < scope.gameSpots.length; b++) {
