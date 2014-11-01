@@ -40,6 +40,12 @@ $scope.reInitBoard();
   		 scope.adjacentMineCount = 0, scope.adjacentSpots = [], scope.currentX, scope.currentY;
 
   		scope.setState = function() {
+
+  			if (event.shiftKey) {
+  				console.log("show flag icon, leave spot closed");
+  				return;
+  			}
+
 				scope.open = !scope.open;
 				
 				if (scope.hasMine() === "true") {

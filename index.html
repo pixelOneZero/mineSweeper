@@ -18,7 +18,7 @@
 		Game over!
 	</div>
 	<div data-container="gameBoard">
-		<div ng-repeat="spot in spotData" ng-class="{open: spot.open}" class="square closed" ng-click="setState()" data-position="{{spot.position}}" data-has-mine="{{spot.mine}}" my-game-spot>
+		<div ng-repeat="spot in spotData" ng-class="{open: spot.open}" class="square closed" ng-click="setState()" ng-dblclick="flagSpot(spot)" data-position="{{spot.position}}" data-has-mine="{{spot.mine}}" my-game-spot>
 			<img src ng-if="spot.mine" ng-src="images/mine.png">
 		</div>
 	</div>
