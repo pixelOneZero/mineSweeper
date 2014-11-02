@@ -42,7 +42,11 @@ div.square {
 }
 div.square.closed {
     background-image:url('../images/mine.png');
-    background-position: -20px 0;
+    background-position: -100px 0;
+}
+div.square.closed.flag {
+    background-image:url('../images/mine.png');
+    background-position: 0 0;
 }
 div.square.closed img {
     display:none;
