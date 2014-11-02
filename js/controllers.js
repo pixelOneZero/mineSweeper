@@ -39,10 +39,14 @@ $scope.reInitBoard();
 
   		scope.setState = function() {
 
+  			// Mark spot with flag if shift key plus click occurs
   			if (event.shiftKey) {
-  				console.log("show flag icon, leave spot closed");
-  				scope.flag = true;
-  				scope.reInitBoard();
+  				for (var b = 0; b < scope.gameSpots.length; b++) {
+  					if (scope.gameSpots[b]["position"] == attrs.position) {
+  						scope.gameSpots[b]["flag"] = !scope.gameSpots[b]["flag"];
+  						scope.reInitBoard();
+  					}
+  				}
   				return;
   			}
 
@@ -83,7 +87,7 @@ $scope.reInitBoard();
 
 					for (var a = 0; a < scope.adjacentSpots.length; a++) {
 						for (var b = 0; b < scope.gameSpots.length; b++) {
-							if ( scope.gameSpots[b]["position"] == scope.adjacentSpots[a] && scope.gameSpots[b]["mine"] == false ) {
+							if ( scope.gameSpots[b]["position"] == scope.adjacentSpots[a] && scope.gameSpots[b]["mine"] == false && scope.gameSpots[b]["flag"] == false) {
 								scope.gameSpots[b]["open"] = true;
 								scope.reInitBoard();
 							}
