@@ -9,13 +9,21 @@
 
 <header> 
     <h1>
-        <!--mineSweeperJS-->
+        mineSweeperJS
     </h1>
+    <p>
+    	A JavaScript, AngularJs implementation of the classic game.
+    </p>
+    <p>
+    	To place a flag on a spot: Shift + click
+    </p>
 </header>
 
 <div ng-controller="gameBoard">
-	<div ng-show="gameOver">
-		Game over!
+	<div class="message">
+		<h4 ng-show="gameOver">
+			Game over! <a href="#" ng-click="reloadGame()">Play again</a>
+		</h4>
 	</div>
 	<div data-container="gameBoard">
 		<div ng-repeat="spot in spotData" ng-class="{open: spot.open, flag: spot.flag}" class="square closed" ng-click="setState()" ng-dblclick="flagSpot(spot)" data-position="{{spot.position}}" data-has-mine="{{spot.mine}}" my-game-spot>

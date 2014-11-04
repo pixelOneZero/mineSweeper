@@ -3,7 +3,7 @@ html {
 }
 body {
     margin:0;
-    padding:0;
+    padding:2em;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -15,12 +15,12 @@ header {
     background:#fff;
     width:100%;
 }
-h1{
-    margin:.25em;
+h1, h4 {
+    margin:0;
     font-weight:normal;
 }
 div[data-container="gameBoard"] {
-    margin:0 20px;
+    margin:auto;
     padding:0;
     height:220px;
     width:220px;
@@ -56,6 +56,10 @@ div.square.open {
 }
 div.square.open img {
     display:block;
+}
+.message {
+    height:1.5em;
+    text-align:center;
 }
 ul {
     margin:0;

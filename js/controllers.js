@@ -28,6 +28,10 @@ uiModule.controller("gameBoard", function($scope) {
 		});
 	}
 
+	$scope.reloadGame = function() {
+		window.location.reload();
+	}
+
 $scope.reInitBoard();
 
 })
