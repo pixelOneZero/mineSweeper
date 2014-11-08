@@ -29,6 +29,7 @@ uiModule.controller("gameBoard", function($scope) {
 	}
 
 	$scope.reloadGame = function() {
+		// Angular-ize this instead of reloading the window
 		window.location.reload();
 	}
 
