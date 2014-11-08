@@ -36,11 +36,11 @@ uiModule.controller("gameBoard", function($scope) {
 $scope.reInitBoard();
 
 })
-.directive("myGameSpot", function() {
+.directive("pozGameSpot", function() {
 	return {
   	link: function(scope, elem, attrs) {
 
-  		scope.adjacentMineCount = 0, scope.adjacentSpots = [], scope.currentX, scope.currentY;
+  		var currentY, currentX, adjacentMineCount = 0, adjacentSpots = [];
 
   		scope.setState = function() {
 
@@ -75,35 +75,35 @@ $scope.reInitBoard();
 				if (scope.isGameover() == false) {
 
 					scope.currentSpot = (attrs.position).split("-");
-					scope.currentX = parseInt(scope.currentSpot[0]);
-					scope.currentY = parseInt(scope.currentSpot[1]);
+					currentX = parseInt(scope.currentSpot[0]);
+					currentY = parseInt(scope.currentSpot[1]);
 
 					// Find adjacent eight spots, starting at top and moving clockwise:
-					scope.adjacentSpots.push( (scope.currentX-1) + "-" + scope.currentY );
-					scope.adjacentSpots.push( (scope.currentX-1) + "-" + (scope.currentY+1) );
-					scope.adjacentSpots.push( scope.currentX + "-" + (scope.currentY+1) );
-					scope.adjacentSpots.push( (scope.currentX+1) + "-" + (scope.currentY+1) );
-					scope.adjacentSpots.push( (scope.currentX+1) + "-" + scope.currentY );
-					scope.adjacentSpots.push( (scope.currentX+1) + "-" + (scope.currentY-1) );
-					scope.adjacentSpots.push( scope.currentX + "-" + (scope.currentY-1) );
-					scope.adjacentSpots.push( (scope.currentX-1) + "-" + (scope.currentY-1) );
+					adjacentSpots.push( (currentX-1) + "-" + currentY );
+					adjacentSpots.push( (currentX-1) + "-" + (currentY+1) );
+					adjacentSpots.push( currentX + "-" + (currentY+1) );
+					adjacentSpots.push( (currentX+1) + "-" + (currentY+1) );
+					adjacentSpots.push( (currentX+1) + "-" + currentY );
+					adjacentSpots.push( (currentX+1) + "-" + (currentY-1) );
+					adjacentSpots.push( currentX + "-" + (currentY-1) );
+					adjacentSpots.push( (currentX-1) + "-" + (currentY-1) );
 					//  Add current spot
-					scope.adjacentSpots.push( (scope.currentX) + "-" + (scope.currentY) );
+					adjacentSpots.push( (currentX) + "-" + (currentY) );
 
-					for (var a = 0; a < scope.adjacentSpots.length; a++) {
+					for (var a = 0; a < adjacentSpots.length; a++) {
 						for (var b = 0; b < scope.gameSpots.length; b++) {
-							if ( scope.gameSpots[b]["position"] == scope.adjacentSpots[a] && scope.gameSpots[b]["mine"] == false && scope.gameSpots[b]["flag"] == false) {
+							if ( scope.gameSpots[b]["position"] == adjacentSpots[a] && scope.gameSpots[b]["mine"] == false && scope.gameSpots[b]["flag"] == false) {
 								scope.gameSpots[b]["open"] = true;
 								scope.reInitBoard();
 							}
-							if (scope.gameSpots[b]["position"] == scope.adjacentSpots[a] && scope.gameSpots[b]["mine"] == true) {
-								scope.adjacentMineCount++;
+							if (scope.gameSpots[b]["position"] == adjacentSpots[a] && scope.gameSpots[b]["mine"] == true) {
+								adjacentMineCount++;
 							}
 						}
 					}
 
-					if (scope.adjacentMineCount > 0) {
-						elem.text(scope.adjacentMineCount);
+					if (adjacentMineCount > 0) {
+						elem.text(adjacentMineCount);
 					}
 
 				}
