@@ -71,7 +71,13 @@ $scope.reInitBoard();
 				}
 
 			}
+
+			scope.hasMine = function() {
+				return attrs.hasMine;
+			}
+			
 			scope.findAdjacentMines = function() {
+
 				if (scope.isGameover() == false) {
 
 					scope.currentSpot = (attrs.position).split("-");
@@ -108,9 +114,7 @@ $scope.reInitBoard();
 
 				}
 			}
-			scope.hasMine = function() {
-				return attrs.hasMine;
-			}
+
   	}
  	}
 })

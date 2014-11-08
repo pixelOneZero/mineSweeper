@@ -19,6 +19,30 @@ h1, h4 {
     margin:0;
     font-weight:normal;
 }
+.message {
+    height:1.5em;
+    text-align:center;
+}
+ul {
+    margin:0;
+    padding:7em 1em;
+}
+li {
+    padding:1.25em 0;
+    margin:0;
+    list-style-type: none;
+    border-bottom:1px solid #aaa;
+}
+li:hover {
+    background:#ddd;
+}
+a {
+    color:#05f;
+}
+a:visited {
+    color:#999;
+}
+
 div[data-container="gameBoard"] {
     margin:auto;
     padding:0;
@@ -48,35 +72,10 @@ div.square.closed.flag {
     background-image:url('../images/mine.png');
     background-position: 0 0;
 }
-div.square.closed img {
-    display:none;
-}
 div.square.open {
-    background-image:none !important;
+    background-image:none;
 }
-div.square.open img {
-    display:block;
-}
-.message {
-    height:1.5em;
-    text-align:center;
-}
-ul {
-    margin:0;
-    padding:7em 1em;
-}
-li {
-    padding:1.25em 0;
-    margin:0;
-    list-style-type: none;
-    border-bottom:1px solid #aaa;
-}
-li:hover {
-    background:#ddd;
-}
-a {
-	color:#05f;
-}
-a:visited {
-    color:#999;
+div.square.open.mine {
+    background-image:url('../images/mine.png');
+    background-position: -20px 0;
 }
