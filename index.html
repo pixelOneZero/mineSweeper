@@ -21,9 +21,13 @@
 
 <div ng-controller="gameBoard">
 	<div class="message">
-		<h4 ng-show="gameOver">
-			Game over! <a href="#" ng-click="reloadGame()">Play again</a>
-		</h4>
+		<div class="counter">
+            {{mineCount}}
+        </div>
+        <a href="#" class="face" ng-class="{dead: gameOver}"></a>
+        <div class="clock" poz-game-clock ng-bind="elapsedTime" ng-model="elapsedTime">
+            {{elapsedTime}}
+        </div>
 	</div>
 	<div data-container="gameBoard">
 		<div ng-repeat="spot in spotData" ng-class="{open: spot.open, flag: spot.flag, mine: spot.mine}" class="square closed" ng-click="setState()" data-position="{{spot.position}}" data-has-mine="{{spot.mine}}" poz-game-spot>

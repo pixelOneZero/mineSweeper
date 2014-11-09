@@ -19,10 +19,6 @@ h1, h4 {
     margin:0;
     font-weight:normal;
 }
-.message {
-    height:1.5em;
-    text-align:center;
-}
 ul {
     margin:0;
     padding:7em 1em;
@@ -41,6 +37,32 @@ a {
 }
 a:visited {
     color:#999;
+}
+
+.message {
+    height:2em;
+    text-align:center;
+}
+.message .face {
+    display:block;
+    background-image:url('../images/sprite.png');
+    background-position: -105px -25px;
+    height:26px;
+    width:26px;
+    margin:auto;
+    text-align:center;
+    background-repeat: no-repeat;
+}
+
+.message .face.dead {
+    background-position: -1px -25px;
+}
+
+.message .counter, .message .clock {
+    border:1px solid gray;
+    width:100px;
+    height:26px;
+    float:left;
 }
 
 div[data-container="gameBoard"] {
@@ -78,4 +100,5 @@ div.square.open {
 div.square.open.mine {
     background-image:url('../images/mine.png');
     background-position: -20px 0;
+    background-color:#f00;
 }
