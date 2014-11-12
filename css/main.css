@@ -42,6 +42,8 @@ a:visited {
 .message {
     height:2em;
     text-align:center;
+    width: 236px;
+    margin:auto;
 }
 .message .face {
     display:block;
@@ -49,7 +51,7 @@ a:visited {
     background-position: -105px -25px;
     height:26px;
     width:26px;
-    margin:auto;
+    float:left;
     text-align:center;
     background-repeat: no-repeat;
 }
