@@ -16,6 +16,7 @@ uiModule.controller("gameBoard", function($scope) {
 
 	$scope.endGame = function() {
 		$scope.gameOver = true;
+		clearInterval($scope.clockSeconds);
 	}
 
 	$scope.isGameover = function() {
@@ -46,7 +47,13 @@ uiModule.controller("gameBoard", function($scope) {
 		// Angular-ize this instead of reloading the window
 		window.location.reload();
 	}
-
+/*
+	if (scope.gameOver) {
+					$scope.$apply(function() {
+						clearInterval(clockSeconds);
+					});
+				}
+*/
 $scope.reInitBoard();
 
 })
@@ -136,9 +143,9 @@ $scope.reInitBoard();
 .directive("pozGameClock", function() {
 	return {
   	link: function(scope, elem, attrs) {
-				var clockSeconds = setInterval(function(){
-					scope.updateClock();
-				}, 1000);
+			scope.clockSeconds = setInterval(function(){
+				scope.updateClock();
+			}, 1000);
 		}
 	}
 })
