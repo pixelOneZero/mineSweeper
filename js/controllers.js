@@ -69,6 +69,9 @@ $scope.reInitBoard();
   			if (event.shiftKey) {
   				for (var b = 0; b < scope.gameSpots.length; b++) {
   					if (scope.gameSpots[b]["position"] == attrs.position) {
+  						if (scope.gameSpots[b]["open"] == true) {
+  							return;
+  						}
   						scope.gameSpots[b]["flag"] = !scope.gameSpots[b]["flag"];
   						scope.updateMineCount();
   						scope.reInitBoard();
