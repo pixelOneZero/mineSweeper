@@ -23,16 +23,6 @@ uiModule.controller("gameBoard", function($scope) {
 		return $scope.gameOver;
 	}
 
-	$scope.reInitBoard = function() {
-		$scope.spotData = $scope.gameSpots;
-	}
-
-	$scope.setSpot = function() {
-		$scope.$apply(function() {
-			$scope.reInitBoard();
-		});
-	}
-
 	$scope.updateMineCount = function() {
 			$scope.mineCount--;
 	}
@@ -44,72 +34,54 @@ uiModule.controller("gameBoard", function($scope) {
 	}
 
 	$scope.reloadGame = function() {
-		// Angular-ize this instead of reloading the window
+		// convert to angular:
 		window.location.reload();
 	}
-/*
-	if (scope.gameOver) {
-					$scope.$apply(function() {
-						clearInterval(clockSeconds);
-					});
-				}
-*/
-$scope.reInitBoard();
 
 })
 .directive("pozGameSpot", function() {
 	return {
   	link: function(scope, elem, attrs) {
-
   		var currentY, currentX, adjacentMineCount = 0, adjacentSpots = [];
 
-  		scope.setState = function() {
+  		scope.setState = function(spot) {
 
-  			// Mark spot with flag if shift key plus click occurs
+
   			if (event.shiftKey) {
-  				for (var b = 0; b < scope.gameSpots.length; b++) {
-  					if (scope.gameSpots[b]["position"] == attrs.position) {
-  						if (scope.gameSpots[b]["open"] == true) {
-  							return;
-  						}
-  						scope.gameSpots[b]["flag"] = !scope.gameSpots[b]["flag"];
-  						scope.updateMineCount();
-  						scope.reInitBoard();
-  					}
+  				if (spot.open == true) {
+  					return;
   				}
+  				spot.flag = !spot.flag;
+  				scope.updateMineCount();
+
+  				// Update condition to check each flagged spot for a mine
+					if (scope.mineCount == 0) {
+						scope.gameWon = true;
+						scope.endGame();
+						alert("game won!");
+					}
+
   				return;
   			}
-
-				scope.open = !scope.open;
 				
-				if (scope.hasMine() === "true") {
-					for (var b = 0; b < scope.gameSpots.length; b++) {
-						if (scope.gameSpots[b]["position"] == attrs.position) {
-							scope.gameSpots[b]["open"] = true;
-							scope.reInitBoard();
-						}
-					}
+				scope.open = !scope.open;
+
+				if (spot.mine === true) {
+					spot.open = true;
 					scope.endGame();
 				}
 				else {
-					scope.findAdjacentMines();
+					scope.findAdjacentMines(spot);
 				}
 
 			}
-
-			scope.hasMine = function() {
-				return attrs.hasMine;
-			}
 			
-			scope.findAdjacentMines = function() {
-
+			scope.findAdjacentMines = function(spot) {
 				if (scope.isGameover() == false) {
 
-					scope.currentSpot = (attrs.position).split("-");
+					scope.currentSpot = (spot.position).split("-");
 					currentX = parseInt(scope.currentSpot[0]);
 					currentY = parseInt(scope.currentSpot[1]);
-
-					// Find adjacent eight spots, starting at top and moving clockwise:
 					adjacentSpots.push( (currentX-1) + "-" + currentY );
 					adjacentSpots.push( (currentX-1) + "-" + (currentY+1) );
 					adjacentSpots.push( currentX + "-" + (currentY+1) );
@@ -118,14 +90,12 @@ $scope.reInitBoard();
 					adjacentSpots.push( (currentX+1) + "-" + (currentY-1) );
 					adjacentSpots.push( currentX + "-" + (currentY-1) );
 					adjacentSpots.push( (currentX-1) + "-" + (currentY-1) );
-					//  Add current spot
 					adjacentSpots.push( (currentX) + "-" + (currentY) );
 
 					for (var a = 0; a < adjacentSpots.length; a++) {
 						for (var b = 0; b < scope.gameSpots.length; b++) {
 							if ( scope.gameSpots[b]["position"] == adjacentSpots[a] && scope.gameSpots[b]["mine"] == false && scope.gameSpots[b]["flag"] == false) {
 								scope.gameSpots[b]["open"] = true;
-								scope.reInitBoard();
 							}
 							if (scope.gameSpots[b]["position"] == adjacentSpots[a] && scope.gameSpots[b]["mine"] == true) {
 								adjacentMineCount++;
@@ -136,7 +106,6 @@ $scope.reInitBoard();
 					if (adjacentMineCount > 0) {
 						elem.text(adjacentMineCount);
 					}
-
 				}
 			}
 
