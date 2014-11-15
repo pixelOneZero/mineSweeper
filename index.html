@@ -30,7 +30,7 @@
         </div>
 	</div>
 	<div data-container="gameBoard">
-		<div ng-repeat="spot in gameSpots" ng-class="{open: spot.open, flag: spot.flag, mine: spot.mine}" class="square closed" ng-click="setState(spot)" data-position="{{spot.position}}" poz-game-spot>
+		<div ng-repeat="spot in gameSpots" ng-class="{open: spot.open, flag: spot.flag, mine: spot.mine}" class="square closed" ng-click="setState(spot)" data-position="{{spot.position}}" poz-game-spot>{{scope.adjacentMineCount}}
 		</div>
 	</div>
 </div>
