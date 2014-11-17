@@ -6,7 +6,6 @@ uiModule.controller("gameBoard", function($scope) {
 	$scope.gameOver = false;
 	$scope.gameWon = false;
 	$scope.currentCoords = [];
-	$scope.spotData = [];
 	$scope.level;
 	$scope.mineCount = 10;
 	$scope.elapsedTime = 0;
@@ -22,10 +21,6 @@ uiModule.controller("gameBoard", function($scope) {
 
 	$scope.isGameover = function() {
 		return $scope.gameOver;
-	}
-
-	$scope.updateMineCount = function() {
-			$scope.mineCount--;
 	}
 
 	$scope.updateClock = function() {
@@ -52,7 +47,7 @@ uiModule.controller("gameBoard", function($scope) {
   				}
   				spot.flag = !spot.flag;
   				if (spot.flag) {
-  					scope.updateMineCount();
+  					$scope.mineCount--;
   				}
   				// Update condition to check each flagged spot for a mine
 					if (scope.mineCount == 0) {
@@ -94,18 +89,19 @@ uiModule.controller("gameBoard", function($scope) {
 					adjacentSpots.push( currentX + "-" + (currentY-1) );
 					adjacentSpots.push( (currentX-1) + "-" + (currentY-1) );
 
+					var proximalMineCount = 0;
+
 					for (var a = 0; a < adjacentSpots.length; a++) {
 						for (var b = 0; b < scope.gameSpots.length; b++) {
 							if ( scope.gameSpots[b]["position"] == adjacentSpots[a] && scope.gameSpots[b]["mine"] == false && scope.gameSpots[b]["flag"] == false && scope.gameSpots[b]["open"] == false) {
 								openSpotCoords = adjacentSpots[a];
-								scope.gameSpots[b]["open"] = true;
 								spot.open = true;
-								scope.writeCount(openSpotCoords, scope.adjacentMineCount);
+								scope.writeCount(openSpotCoords, proximalMineCount);
 								scope.findAdjacentMines(scope.gameSpots[b]);
 							}
 							if (scope.gameSpots[b]["position"] == adjacentSpots[a] && scope.gameSpots[b]["mine"] == true) {
-								scope.adjacentMineCount++;
-								scope.writeCount(openSpotCoords, scope.adjacentMineCount);																
+								proximalMineCount++;
+								scope.writeCount(openSpotCoords, proximalMineCount);																
 								return;
 							}
 						}							
